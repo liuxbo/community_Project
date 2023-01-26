@@ -2,6 +2,7 @@ package com.nowcoder.community;
 
 import com.nowcoder.community.dao.AlphaDao;
 import com.nowcoder.community.service.AlphaService;
+import com.nowcoder.community.util.MailClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.BeansException;
@@ -72,4 +73,11 @@ public class CommunityApplicationTests implements ApplicationContextAware {
 		System.out.println(simpleDateFormat);
 	}
 
+	@Autowired
+	private MailClient mailClient;
+
+	@Test
+	public void testText(){
+		mailClient.sendMail("24520211154656@stu.xmu.edu.cn","test1","11");
+	}
 }
